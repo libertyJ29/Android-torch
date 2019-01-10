@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Turn the torch on"
+        android:id="@+id/turnTheTorchOnOffTextView"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleTorchlightButton"
+        android:textOn="Turn Off"
+        android:textOff="Turn On"
+        android:checked="false"
+        android:layout_below="@+id/turnTheTorchOnOffTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:text="Strobe frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frequencyTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/toggleTorchlightButton"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/frequencySpeedTextRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frequencyTextView">
+
+    <TextView
+        android:id="@+id/frequencyFastestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:text="Fastest"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/frequencySlowestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:text="Slowest"
+        android:textSize="12sp" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:text="Fastest to Slowest"
+        android:layout_below="@+id/frequencySpeedTextRL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:max="100" />
+
+    <CheckBox
+        android:text="Enable Strobing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/constantStrobingCheckBox"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@id/seekBar" />
+
+</RelativeLayout>
